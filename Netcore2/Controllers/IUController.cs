@@ -24,6 +24,7 @@ namespace Netcore2.Controllers
             var uu = onetestB.GetHashCode();   //9570543 9570543
         }
 
+        //[ServiceFilter]
         [HttpPost]
         public void GetName() 
         {

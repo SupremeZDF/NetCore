@@ -6,10 +6,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Autofac.Extensions.DependencyInjection;
-using Autofac;
 
-namespace Netcore2
+namespace Mvc
 {
     public class Program
     {
@@ -23,6 +21,6 @@ namespace Netcore2
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                }).UseServiceProviderFactory(new AutofacServiceProviderFactory());
+                });
     }
 }

@@ -17,8 +17,10 @@ namespace Netcore2.Middleware
         public async Task Invoke(HttpContext httpContext) 
         {
             Console.WriteLine("OneModelWale:xxxxxx");
+            //throw new Exception("xxxxxxxx");
             await Delegate.Invoke(httpContext);
             Console.WriteLine("OneModelWale:xxxxxx");
+         
         }
     }
 }

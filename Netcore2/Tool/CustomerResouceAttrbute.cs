@@ -9,11 +9,17 @@ namespace Netcore2.Tool
 {
     public class CustomerResouceAttrbute : Attribute, IResourceFilter
     {
+        public CustomerResouceAttrbute() 
+        {
+        
+        }
         //资源过滤器
         public void OnResourceExecuted(ResourceExecutedContext context)
         {
             //throw new NotImplementedException();
             //context.Result = new JsonResult("dsds");
+            Console.WriteLine("TwoMiddleware:xxxxxx");
+            throw new Exception("xxxxxxxx");
         }
 
         public void OnResourceExecuting(ResourceExecutingContext context)

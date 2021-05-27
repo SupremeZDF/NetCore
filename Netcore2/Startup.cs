@@ -19,6 +19,8 @@ using Autofac.Extensions.DependencyInjection;
 using Autofac;
 using Netcore2.Tool;
 using Netcore2.Middleware;
+using Microsoft.AspNetCore.Builder.Extensions;
+using System.Security.Claims;
 
 namespace Netcore2
 {
@@ -40,6 +42,7 @@ namespace Netcore2
             {
                 o.Filters.Add(typeof(ExceptionFilter));
                 o.Filters.Add(typeof(CustomerResouceAttrbute));
+                o.Filters.Add(typeof(AuthorizationFilter));
             }).AddRazorRuntimeCompilation(); //¶¯Ì¬±àÒë
             services.AddSwaggerGen(services =>
             {
@@ -53,10 +56,10 @@ namespace Netcore2
                 var pa = System.IO.Path.Combine(u, "Netcore2.xml");
                 services.IncludeXmlComments(pa);
             });
-            services.AddScoped<IoneTestA, OneTestA>();
-            services.AddSingleton<IOnetestB, OnetestB>();
+            //services.AddScoped<IoneTestA, OneTestA>();
+            //services.AddSingleton<IOnetestB, OnetestB>();
 
-            ContainerBuilder configurationBuilder = new ContainerBuilder() { };
+            //ContainerBuilder configurationBuilder = new ContainerBuilder() { };
 
             //configurationBuilder.RegisterType<OneTestA>().As<IoneTestA>();
             //configurationBuilder.RegisterType<OnetestB>().As<IOnetestB>();
@@ -80,7 +83,7 @@ namespace Netcore2
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage(); //new MapMiddleware
             }
             #region
             //app.Map("/test", Name);
@@ -106,7 +109,6 @@ namespace Netcore2
                 Console.WriteLine("dasdasd");
                 return async x =>
                 {
-
                     Console.WriteLine("xxx");
                     await c.Invoke(x);
                     Console.WriteLine("xxx");
@@ -117,9 +119,41 @@ namespace Netcore2
             Func<int, int, int> func = (c, x) => { return c + x; };
 
 
-            app.Map("/map", x => { x.Use(y => { Console.WriteLine("xxx"); return async u => { Console.WriteLine("xxx"); await y.Invoke(u); Console.WriteLine("xxxx"); }; }); });
+            app.Map("/map", 
+                x => {
+                    x.Use(y => 
+                    {
+                        var cliarm = new ClaimsIdentity();
+                        Console.WriteLine("xxx");
+                        return 
+                        async u => 
+                        { 
+                            Console.WriteLine("xxx");
+                            await y.Invoke(u);
+                            Console.WriteLine("xxxx");
+                        };
+                    }); 
+                    x.UseHttpsRedirection();
+                    //x.UseEndpoints(endpoints =>
+                    //{
+                    //    endpoints.MapControllers();
+                    //});
+                });
 
-            app.MapWhen(x => x.Request.Query.ContainsKey("Name"), x => { x.Use(y => { Console.WriteLine(); return async u => { Console.WriteLine("xxx"); await y.Invoke(u); Console.WriteLine("xxx"); }; }); });
+            app.MapWhen(x => x.Request.Query.ContainsKey("Name"), 
+                x => { 
+                x.Use(
+                    y => 
+                    { 
+                        Console.WriteLine();
+                        return async u =>
+                        { 
+                            Console.WriteLine("xxx");
+                            await y.Invoke(u); 
+                            Console.WriteLine("xxx");
+                        };
+                    });
+                });
 
             app.Use(async (x, c) =>
             {

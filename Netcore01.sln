@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netcore01", "Netcore01\Netcore01.csproj", "{18AA76D7-AE56-4746-9B6D-CED20418FB87}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Netcore", "Netcore", "{8C56B993-18FA-4991-B55B-1C18C1BE30E3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netcore2", "Netcore2\Netcore2.csproj", "{5ECA293E-2077-4573-B639-9DD1A0322B50}"
@@ -27,10 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{18AA76D7-AE56-4746-9B6D-CED20418FB87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18AA76D7-AE56-4746-9B6D-CED20418FB87}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18AA76D7-AE56-4746-9B6D-CED20418FB87}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18AA76D7-AE56-4746-9B6D-CED20418FB87}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5ECA293E-2077-4573-B639-9DD1A0322B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5ECA293E-2077-4573-B639-9DD1A0322B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ECA293E-2077-4573-B639-9DD1A0322B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -56,7 +50,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{18AA76D7-AE56-4746-9B6D-CED20418FB87} = {8C56B993-18FA-4991-B55B-1C18C1BE30E3}
 		{5ECA293E-2077-4573-B639-9DD1A0322B50} = {8C56B993-18FA-4991-B55B-1C18C1BE30E3}
 		{D60102EC-0403-4E1E-95F6-420F08784D91} = {A2249A2A-AC67-4F12-B3F1-2BB8CCE19B24}
 		{52F085E0-EA0A-4EC6-8657-F7D9E0CD7E13} = {8C56B993-18FA-4991-B55B-1C18C1BE30E3}

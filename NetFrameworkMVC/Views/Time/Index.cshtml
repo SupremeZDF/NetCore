@@ -11,12 +11,20 @@
     <title>Index</title>
 </head>
 <body>
-    <div> 
+    <div>
         <h2> @ViewData["sss"]</h2>
         <h2>
             @Scripts.Render("~/bundles/jquery")
             @Scripts.Render("~/bundles/bootstrap")
         </h2>
+        @{Html.RenderPartial("ssss", "sssss");}   @*  使用局部页 不加载action *@
+        @Html.Partial("", "")    @*  使用局部页 不加载action  *@
+
+        @{ Html.RenderAction("sss", "ssss"); }  @*  使用局部页加载方法 *@
+        @Html.Action("","")
+
+        @RenderSection("ssss",required:false)
+        @RenderBody();
     </div>
 </body>
 </html>

@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<h3>@ViewBag.aaa.Age</h3>
+<h3>@ViewBag.aaa.Name</h3>
+
+@section  www
+    {
+
+    <h2> 这是局部也 RenderSection</h2>
+
+}
+
+@{Html.RenderPartial("One", "ssss");}
+
+@{Html.Partial("One", "ssss");}
+
+
+@{Html.RenderAction("Two", "Test","ssss");}
+@Html.Action("Two","Test" ,"ssss")
+

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.IO;
+using WebService.WCF.Model;
 
 namespace WebService.WCF
 {
@@ -13,6 +15,15 @@ namespace WebService.WCF
     {
         public void DoWork()
         {
+            //using (FileStream stream = File.Create("")) 
+            //{
+                
+            //}
+        }
+
+        public WUser GetUser()
+        {
+            return new WUser() { Name = "123", ID=123 ,Age = "123"}; ;
         }
     }
 }

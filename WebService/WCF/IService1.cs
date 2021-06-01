@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using WebService.WCF.Model;
 
 namespace WebService.WCF
 {
@@ -13,5 +14,8 @@ namespace WebService.WCF
     {
         [OperationContract]
         void DoWork();
+
+        [OperationContract]
+        WUser GetUser();
     }
 }

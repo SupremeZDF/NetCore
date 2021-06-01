@@ -133,6 +133,7 @@
     <Compile Include="Models\SoapHerder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WCF\IService1.cs" />
+    <Compile Include="WCF\Model\WUser.cs" />
     <Compile Include="WCF\Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>

@@ -16,14 +16,14 @@ namespace NetFrameworkMVC
             routes.MapRoute(
               name: "Test",
               url: "{controller}/{action}_{year}_{month}_{day}",
-              defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+              defaults: new { controller = "s", action = "Index", id = UrlParameter.Optional },
                 constraints: new { year = @"\d{4}" , month = @"\d{2}" , day = @"\d{2}" }
             );
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "s", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

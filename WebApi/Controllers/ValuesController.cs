@@ -18,6 +18,7 @@ namespace WebApi.Controllers
         // GET api/values/5
         public string Get(int id)
         {
+            HttpClient httpClient = new HttpClient();
             return "value";
         }
 
@@ -25,6 +26,7 @@ namespace WebApi.Controllers
         // POST api/values
         public void Post([FromBody] string value)
         {
+           
         }
 
         // PUT api/values/5
@@ -35,6 +37,7 @@ namespace WebApi.Controllers
         // DELETE api/values/5
         public void Delete(int id)
         {
+
         }
     }
 }

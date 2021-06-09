@@ -12,6 +12,8 @@ namespace WebApi.Controllers
         {
             ViewBag.Title = "s Page";
 
+            
+
             return View();
         }
     }

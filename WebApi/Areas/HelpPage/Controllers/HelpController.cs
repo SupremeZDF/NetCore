@@ -41,7 +41,6 @@ namespace WebApi.Areas.HelpPage.Controllers
                     return View(apiModel);
                 }
             }
-
             return View(ErrorViewName);
         }
 

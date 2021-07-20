@@ -54,10 +54,16 @@ namespace Netcore2
             //var yus = Assembly.GetAssembly(typeof(ExceptionFilter)).GetTypes().Where(x => x.Name == "ExceptionFilter").FirstOrDefault();
             //services.AddControllers();
             //var c = typeof(IOneReflectionB).GetInterfaces();
-
-           
-
-            var d = Assembly.Load(Assembly.GetAssembly(typeof(ExceptionFilter))?.GetName()).GetTypes().Where( x => x.GetInterface("IOneReflection") != null ).ToList();
+            var a = Assembly.GetAssembly(typeof(TwoReflection)).GetTypes().Count();
+            var b = Assembly.Load(Assembly.GetAssembly(typeof(TwoReflection))?.GetName()).GetTypes().Count();
+            var g = Assembly.Load(Assembly.GetAssembly(typeof(TwoReflection))?.GetName().Name).GetTypes().Where(x => x.Name == "Assmmodel").FirstOrDefault();
+            var gg = Assembly.GetAssembly(typeof(TwoReflection));
+            
+            { 
+              var ts = gg.Location;
+                ts = gg.CodeBase;
+            }
+             var d = Assembly.Load(Assembly.GetAssembly(typeof(ExceptionFilter))?.GetName()).GetTypes().Where( x => x.GetInterface("IOneReflection") != null ).ToList();
             var dd = d.Count();
             var uo = typeof(ui).IsClass;
             services.AddOptions();

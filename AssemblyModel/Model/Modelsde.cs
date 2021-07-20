@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AssemblyModel.Model
 {
-    public class Assmmodel
+    class Modelsde
     {
 
     }

@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Netcore2.AutoReflection;
 using Netcore2.Instance;
 using Netcore2.Tool;
+using System.Reflection;
 
 namespace Netcore2.Controllers
 {
@@ -40,7 +42,6 @@ namespace Netcore2.Controllers
         [HttpGet]
         public void Name() 
         {
-          
             _onetestE.Name("1","2");
             throw new Exception("");
         }

@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Autofac.Extensions.DependencyInjection;
 using Autofac;
+using Netcore2.Middleware;
 
 namespace Netcore2
 {
@@ -23,6 +24,7 @@ namespace Netcore2
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    //HostingBuireder.OneTest(args);
                 }).UseServiceProviderFactory(new AutofacServiceProviderFactory());
     }
 }

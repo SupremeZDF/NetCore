@@ -20,6 +20,8 @@ namespace Netcore2.Tool
         {
              
         }
+
+        public string Name { get; set; }
        // public override Task OnExceptionAsync(ExceptionContext context) { }
     }
 }

@@ -58,12 +58,36 @@ namespace Netcore2
             var b = Assembly.Load(Assembly.GetAssembly(typeof(TwoReflection))?.GetName()).GetTypes().Count();
             var g = Assembly.Load(Assembly.GetAssembly(typeof(TwoReflection))?.GetName().Name).GetTypes().Where(x => x.Name == "Assmmodel").FirstOrDefault();
             var gg = Assembly.GetAssembly(typeof(TwoReflection));
-            
-            { 
-              var ts = gg.Location;
+            //var g = new ServiceCollection();
+            {
+                var ts = gg.Location;
                 ts = gg.CodeBase;
+                services.AddSingleton<TwoReflection>();
+                //services.AddScoped<ExceptionFilter>();
+                
+                var tto = services.BuildServiceProvider();
+                var intance = tto.CreateScope().ServiceProvider.GetService<TwoReflection>();
+                intance.Name = "123";
+                Console.WriteLine(intance.GetHashCode());
+                var gggu = tto.CreateScope().ServiceProvider.GetService<TwoReflection>();
+                var biu = tto.CreateScope().ServiceProvider;
+                Console.WriteLine(gggu.GetHashCode());
+                var bi = 1;
+                {
+                    //ServiceCollection serviceDescriptors = new ServiceCollection();
+                    //var hu = tto.GetService<ExceptionFilter>();
+                    //hu.Name = "432";
+                    //Console.WriteLine(hu.GetHashCode());
+                    //Console.WriteLine(services.BuildServiceProvider().CreateScope().ServiceProvider.GetService<ExceptionFilter>().GetHashCode());
+                }
+                {
+                    //var hu = tto.GetService<ExceptionFilter>();
+                    //hu.Name = "432";
+                    //Console.WriteLine(hu.GetHashCode());
+                    //Console.WriteLine(services.BuildServiceProvider().CreateScope().ServiceProvider.GetService<ExceptionFilter>().GetHashCode());
+                }
             }
-             var d = Assembly.Load(Assembly.GetAssembly(typeof(ExceptionFilter))?.GetName()).GetTypes().Where( x => x.GetInterface("IOneReflection") != null ).ToList();
+            var d = Assembly.Load(Assembly.GetAssembly(typeof(ExceptionFilter))?.GetName()).GetTypes().Where(x => x.GetInterface("IOneReflection") != null).ToList();
             var dd = d.Count();
             var uo = typeof(ui).IsClass;
             services.AddOptions();
@@ -153,7 +177,7 @@ namespace Netcore2
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env ,IOptions<OneTest> options)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IOptions<OneTest> options)
         {
             //var ts = options.Value;
             //HostingBuireder.OneTest();

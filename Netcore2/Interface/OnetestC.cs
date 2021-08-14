@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Netcore2.Interface
 {
-    public class OnetestC : IOnetestC
+    public class OnetestC : Base, IOnetestC
     {
 
     }

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Netcore2.Interface
 {
-    public class OnetestD : IOnetestD
+    public class Base { } 
+
+    public class OnetestD : Base, IOnetestD
     {
         //Queryable
     }

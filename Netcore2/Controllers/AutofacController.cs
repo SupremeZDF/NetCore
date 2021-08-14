@@ -22,17 +22,17 @@ namespace Netcore2.Controllers
         private IOnetestB _onetestB;
         private IOnetestC _onetestC;
         private IOnetestD _onetestD;
-        private IOnetestE _onetestE;
+        //private IOnetestE _onetestE;
         public AA AA;
 
         /// <summary>
         /// 
         /// </summary>
-        public AutofacController(IOnetestD onetestD,IoneTestA ioneTestA, AA aA) 
+        public AutofacController(IoneTestA ioneTestA, IOnetestB onetestB, IOnetestC onetestC, IOnetestD onetestD,  AA aA) 
         {
             _ioneTestA = ioneTestA;
-            //_onetestB = onetestB;
-            //_onetestC = onetestC;
+            _onetestB = onetestB;
+            _onetestC = onetestC;
             _onetestD = onetestD;
             //_onetestE = onetestE;
             AA = aA;
@@ -48,7 +48,7 @@ namespace Netcore2.Controllers
             var c = _ioneTestA.GetHashCode(); //14616266
             c = _onetestD.GetHashCode(); //3930951 34257225
             _ioneTestA.run();
-            _onetestE.Name("1","2");
+            //_onetestE.Name("1","2");
             throw new Exception("");
         }
     }

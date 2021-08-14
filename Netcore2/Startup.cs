@@ -214,7 +214,9 @@ namespace Netcore2
                 //.AsImplementedInterfaces().//暴露所有接口
                 //.InstancePerLifetimeScope()// 作用域
                 //.SingleInstance()// 单列
-                .InstancePerDependency(); //顺势
+                .InstancePerDependency()  //顺势
+                //.PropertiesAutowired() // sh
+                ;
         }
 
         public static void Name(List<Assmmodel> assmmodels)

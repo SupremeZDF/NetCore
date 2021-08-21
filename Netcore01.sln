@@ -23,7 +23,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assb", "Assb", "{6455921C-6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assembly", "Assembly", "{02039DEE-8350-44F1-82FE-8262A01F13FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyModel", "AssemblyModel\AssemblyModel.csproj", "{EB11C535-9C21-4FB3-AB7A-1D2AAA5A49CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssemblyModel", "AssemblyModel\AssemblyModel.csproj", "{EB11C535-9C21-4FB3-AB7A-1D2AAA5A49CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileProvider", "FileProvider\FileProvider.csproj", "{D1A1487C-B092-4D8D-A6B7-7F379036AE9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{EB11C535-9C21-4FB3-AB7A-1D2AAA5A49CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB11C535-9C21-4FB3-AB7A-1D2AAA5A49CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB11C535-9C21-4FB3-AB7A-1D2AAA5A49CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1A1487C-B092-4D8D-A6B7-7F379036AE9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1A1487C-B092-4D8D-A6B7-7F379036AE9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1A1487C-B092-4D8D-A6B7-7F379036AE9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1A1487C-B092-4D8D-A6B7-7F379036AE9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{8DF09479-51C4-4DCE-A379-ED78CFECEAE2} = {A066E6CB-3702-49A9-B787-405DAEFE7DB7}
 		{16C41999-BFF8-423B-883B-39A46A4A69D3} = {A066E6CB-3702-49A9-B787-405DAEFE7DB7}
 		{EB11C535-9C21-4FB3-AB7A-1D2AAA5A49CC} = {02039DEE-8350-44F1-82FE-8262A01F13FA}
+		{D1A1487C-B092-4D8D-A6B7-7F379036AE9A} = {8C56B993-18FA-4991-B55B-1C18C1BE30E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3E62AAC6-64D8-42BA-A0A3-7CAF290FB0AB}

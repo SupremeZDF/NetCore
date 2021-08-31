@@ -17,6 +17,14 @@ using System.Reflection;
 
 namespace FileProvider
 {
+
+    public class NameLoa
+    {
+        public string Name { get; set; }
+
+        public string Age { get; set; }
+    }
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -29,6 +37,25 @@ namespace FileProvider
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            {
+                var g = ",dadae3ed4,";
+                var h = g.Split(",");
+                //var c = new PdfExporter();
+                var dd = new List<NameLoa>()
+               {
+                 new NameLoa(){  Age = "1" , Name = "1"},
+                  new NameLoa(){  Age = "2" , Name = "1"},
+                   new NameLoa(){  Age = "3" , Name = "1"},
+                    new NameLoa(){  Age = "2" , Name = "1"},
+                     new NameLoa(){  Age = "3" , Name = "1"}
+               };
+
+                var ww = dd.Where(x => x.Age == "2").ToList();
+                ww.ForEach(x => x.Name = "2222222222222222222222222222");
+
+                dd.ForEach(xx => xx.Age = "111111111111111111111111");
+            }
+
             services.AddControllers();
             services.AddSwaggerGen(services =>
             {
@@ -37,7 +64,7 @@ namespace FileProvider
                     Version = "v1",
                     Title = "1"
                 });
-                
+
                 var u = AppDomain.CurrentDomain.BaseDirectory;
                 var pa = System.IO.Path.Combine(u, "FileProvider.xml");
                 services.IncludeXmlComments(pa);

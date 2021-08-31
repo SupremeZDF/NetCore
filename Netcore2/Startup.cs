@@ -48,6 +48,7 @@ namespace Netcore2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //var d = new PdfExporter();
             {
                 //Assembly assembly = null;
                 //var c = Assembly.GetAssembly(typeof(ExceptionFilter)).Location;
